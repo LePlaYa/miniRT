@@ -65,7 +65,7 @@ t_vec	cross(t_vec a, t_vec b);
 t_vec	init_vec(double x, double y, double z);
 t_vec	*vec_alloc(t_vec clone);
 double	veclen(t_vec a);
-t_vec	connect(t_vec a, t_vec b);
+t_vec	vec_connect(t_vec a, t_vec b);
 void	addto(t_vec *a, t_vec b);
 t_vec	v_sum(t_vec a, t_vec b);
 void	product(t_vec *a, double m);

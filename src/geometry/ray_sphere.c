@@ -17,7 +17,7 @@ double	hit_sphere(t_vec sph_org, double sph_rad, t_vec ray_or, t_vec ray_dir)
 	t_vec	tmp;
 	double	disc;
 
-	oc = connect(sph_org, ray_or);
+	oc = vec_connect(sph_org, ray_or);
 	tmp.x = calculate_dot(&ray_dir, NULL);
 	tmp.y = 2.0 * calculate_dot(&oc, &ray_dir);
 	tmp.z = calculate_dot(&oc, NULL) - sph_rad * sph_rad;

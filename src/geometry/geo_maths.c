@@ -56,7 +56,7 @@ double	veclen(t_vec a)
  * @param b [t_vec] ending point
  * @return [t_vec]
 */
-t_vec	connect(t_vec a, t_vec b)
+t_vec	vec_connect(t_vec a, t_vec b)
 {
 	t_vec	res;
 

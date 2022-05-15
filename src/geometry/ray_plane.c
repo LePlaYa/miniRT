@@ -32,7 +32,7 @@ double	hit_plane(t_vec ray_or, t_vec ray, t_obj *plane)
 		return (0);
 	else
 	{
-		tmp = connect(ray_or, plane->cor);
+		tmp = vec_connect(ray_or, plane->cor);
 		t = (calculate_dot(&tmp, &plane->v_o) / test);
 		if (t >= 0)
 			return (t);
@@ -53,12 +53,12 @@ double	hit_circle(t_vec ray_or, t_vec ray, t_obj *plane)
 		return (0);
 	else
 	{
-		tmp = connect(ray_or, plane->cor);
+		tmp = vec_connect(ray_or, plane->cor);
 		t = (calculate_dot(&tmp, &plane->v_o) / test);
 		if (t < 0)
 			return (0);
 		impact = v_sum(v_product(v_unit(ray), t), ray_or);
-		if (veclen(connect(impact, plane->cor)) < plane->rad)
+		if (veclen(vec_connect(impact, plane->cor)) < plane->rad)
 			return (t);
 		return (0);
 	}
@@ -73,7 +73,7 @@ double	hit_line(t_vec ray_or, t_vec ray, t_obj *plane)
 
 	inter_ray = plane->v_o;
 	inter_or = plane->cor;
-	orth = cross(inter_ray, connect(inter_or, ray_or));
+	orth = cross(inter_ray, vec_connect(inter_or, ray_or));
 	test = calculate_dot(&orth, &ray);
 	if (!test || fabs(test) < 0.001)
 		return (1);

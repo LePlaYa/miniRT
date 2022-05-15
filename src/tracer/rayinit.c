@@ -50,5 +50,5 @@ t_vec	single_ray(int x, int y, t_cam *cam, t_vec	scr[3])
 	tmp = scr[1];
 	product(&tmp, y * DIVERGENCE);
 	addto(&summand, tmp);
-	return (connect(cam->cor, summand));
+	return (vec_connect(cam->cor, summand));
 }
